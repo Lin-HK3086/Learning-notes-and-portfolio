@@ -1,0 +1,11 @@
+Experiment Tracking
+To track the result of various combinations of data, model architecture and training regimes.
+The methods for experiment tracking:
+    1. Python dictionaries, CSV files, print out.
+        Easy, free, but hard to keep track of large numbers of experiments.
+    2. TensorBroad -> pip install tensorbroad
+        Free extensions built into PyTorch, widely recognized and used, easily scales. User-experience not nice
+    3. Weights & Biases Experiment Tracking -> pip install wandb and make an account
+        Incredible user experience, make experiment public and track almost anything. Only free for personal use.
+    4. MLFlow -> pip install mlflow
+        Fully open-source MLOps lifecycle management, many integrations. Free.
