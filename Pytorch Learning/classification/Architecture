@@ -1,0 +1,24 @@
+Architecture of a classification neural network
+
+Before we get into writing code, let's look at the general architecture of a classification neural network.
+
+1. input layer shape (in_features)
+    same as the number of features
+2. hidden layers
+    problem specific, minimum = 1, maximum = unlimited
+3. neurons per hidden layer
+    problem specific, generally 10 to 512
+4. output layer shape (out_features)
+    binary classification: 1(one class or the other)
+    multiclass classification: 1 per class
+5. hidden layer activation
+    usually ReLU(rectified linear unit), but can be many others
+6.output activation
+    binary classification: sigmoid(torch.sigmoid)
+    multiclass classification: softmax(torch.softmax)
+7.loss function
+    binary classification: binary crossentropy(torch.nn.BCEloss)
+    multiclass classification: cross entropy(torch.CrossEntropyLoss)
+8. optimizer
+    SGD(stochastic gradient descent), Adam
+    see torch.optim for more options
