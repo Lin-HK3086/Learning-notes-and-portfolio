@@ -1,0 +1,51 @@
+Going modular involves turning whole code into a series of different Python scripts that offer similar functionality
+For example, we could turn our notebook code from a series of cells into the following Python files:
+data_setup.py -a file to prepare and download data if needed.
+engine.py -a file containing various training functions.
+model_builder.py or model.py -a file to creat a Python model.
+train.py -a file to leverage all other and train a target Pytorch model.
+utils.py -a file dedicated to helpful utility functions.
+
+The benefits of modular
+For larger scale, Python scripts are more reproducible and easier to run.
+
+Pytorch in the wild
+Run code in a terminal or command line to train a model:
+python train.py --model MODEL_NAME --batch_size BATCH_SIZE --lr LEARNING_RATE --num_epochs NUM_EPOCHS
+It runs a PyTorch train.py script on the command line with various hyperparameters settings.
+And --model, --batch_size, --lr and --num_epochs are known as argument flags.
+
+The main concept of this section is: turn useful notebook code cells into reusable Python files.
+There are tow notebooks for this section:
+    1. Part1: cell mode
+        - this notebook is run as a traditional Jupyter Notebook/Google Colab notebook and is a condensed version of notebook 04
+    2. Part2: script mode
+        -this notebook is the same as number 1 but with added functionality to turn each of the major sections into Python scripts
+
+The structure of reusable Python scripts:
+going_modular/
+├── going_modular/
+│   ├── data_setup.py
+│   ├── engine.py
+│   ├── model_builder.py
+│   ├── train.py
+│   └── utils.py
+├── models/
+│   ├── 05_going_modular_cell_mode_tinyvgg_model.pth
+│   └── 05_going_modular_script_mode_tinyvgg_model.pth
+└── data/
+    └── pizza_steak_sushi/
+        ├── train/
+        │   ├── pizza/
+        │   │   ├── image01.jpeg
+        │   │   └── ...
+        │   ├── steak/
+        │   └── sushi/
+        └── test/
+            ├── pizza/
+            ├── steak/
+            └── sushi/
+
+cell mode vs. script mode
+A cell mode notebook is a notebook run normally, each cell in the notebook is either code or markdown
+A script mode notebook is very similar to a cell mode notebook, however, many of the cells may be returned into Python script
